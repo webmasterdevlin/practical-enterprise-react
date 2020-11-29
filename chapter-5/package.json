@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "4.11.1",
+    "@material-ui/icons": "4.9.1",
     "@material-ui/lab": "4.0.0-alpha.56",
     "@material-ui/pickers": "3.2.10",
     "@material-ui/styles": "4.11.1",
