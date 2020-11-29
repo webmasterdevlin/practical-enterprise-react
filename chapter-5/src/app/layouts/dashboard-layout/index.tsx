@@ -1,12 +1,12 @@
 import { Grid } from '@material-ui/core';
 import React from 'react';
-import DashboardSidebarNavigation from '../components/dashboard-sidebar-navigation';
+import DashboardSidebarNavigation from '../../layouts/dashboard-layout/dashboard-sidebar-navigation';
 
 type Props = {
   children: React.ReactNode;
 };
 
-export const Dashboard = ({ children }: Props) => {
+const Dashboard = ({ children }: Props) => {
   return (
     <Grid
       container
@@ -18,3 +18,5 @@ export const Dashboard = ({ children }: Props) => {
     </Grid>
   );
 };
+
+export default Dashboard;
