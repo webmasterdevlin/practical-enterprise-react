@@ -11,40 +11,40 @@ export const Routes = () => {
     <Suspense fallback={<LinearProgress style={{ margin: '10rem' }} />}>
       <Switch>
         {/*eager loading*/}
-        <Route exact path={'/'} component={HomePage} />
+        <Route path={'/'} component={HomePage} exact />
         {/*lazy loadings*/}
         <Route
-          exact
           path={'/about'}
           component={lazy(() => import('./views/pages/AboutPage'))}
+          exact
         />
+
         <Route
           path={'/dashboard'}
           render={({ match: { path } }) => (
             <Dashboard>
               <Switch>
                 <Route
-                  exact
                   path={path + '/'}
                   component={lazy(
                     () => import('./views/dashboard/dashboard-default-content'),
                   )}
+                  exact
                 />
                 <Route
-                  exact
                   path={path + '/settings-and-privacy'}
                   component={lazy(
                     () => import('./views/dashboard/settings-and-privacy'),
                   )}
+                  exact
                 />
-                <Route exact from={path + '/*'} to={path} />
               </Switch>
             </Dashboard>
           )}
         />
         {/*eager loading*/}
-        <Route path={'/not-found'} component={NotFoundPage} />
-        <Redirect exact from={'*'} to={'/not-found'} />
+        <Route path={'/not-found'} component={NotFoundPage} exact />
+        <Redirect from={'*'} to={'/not-found'} exact />
       </Switch>
     </Suspense>
   );

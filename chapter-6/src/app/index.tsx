@@ -9,10 +9,10 @@
 import { Container } from '@material-ui/core';
 import * as React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { BrowserRouter } from 'react-router-dom';
-import { GlobalStyle } from 'styles/global-styles';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
-import NavigationBar from './views/components/navigation-bar';
+import { GlobalStyle } from 'styles/global-styles';
+import NavigationBar from './components/navigation-bar';
 import { Routes } from './routes';
 
 export function App() {

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-const HomePage = () => {
+const Main = () => {
   return (
-    <div style={{ height: '20rem' }}>
-      <h1>Hello HomePage</h1>
+    <div>
+      <h1>Main Page</h1>
     </div>
   );
 };
 
-export default HomePage;
+export default Main;

@@ -23,7 +23,6 @@ import { configureAppStore } from 'store/configureStore';
 
 // Initialize languages
 import './locales/i18n';
-import CssBaseline from '@material-ui/core/CssBaseline';
 
 const store = configureAppStore();
 const MOUNT_NODE = document.getElementById('root') as HTMLElement;
@@ -35,7 +34,6 @@ const ConnectedApp = ({ Component }: Props) => (
   <Provider store={store}>
     <HelmetProvider>
       <React.StrictMode>
-        <CssBaseline />
         <Component />
       </React.StrictMode>
     </HelmetProvider>
