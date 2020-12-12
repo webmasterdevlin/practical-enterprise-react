@@ -1,0 +1,80 @@
+{
+  "sales": [
+    {
+      "id": "sgacus86fov",
+      "name": "This week",
+      "data": [30, 40, 25, 50, 49, 21, 70, 51]
+    },
+    {
+      "id": "saftyaf56",
+      "name": "Last week",
+      "data": [23, 12, 54, 61, 32, 56, 81, 19]
+    }
+  ],
+  "products": [
+    {
+      "id": "5ece2c077e39da27658aa8a9",
+      "attributes": ["Cotton"],
+      "category": "dress",
+      "currency": "$",
+      "createdAt": "2021-01-01T12:00:27.87+00:20",
+      "image": null,
+      "inventoryType": "in_stock",
+      "isAvailable": true,
+      "isShippable": false,
+      "name": "Charlie Tulip Dress",
+      "price": 23.99,
+      "quantity": 85,
+      "updatedAt": "2021-01-01T12:00:27.87+00:20",
+      "variants": 2
+    },
+    {
+      "id": "5ece2c0d16f70bff2cf86cd8",
+      "attributes": ["Cotton"],
+      "category": "dress",
+      "currency": "$",
+      "createdAt": "2021-01-01T12:00:27.87+00:20",
+      "image": null,
+      "inventoryType": "out_of_stock",
+      "isAvailable": false,
+      "isShippable": true,
+      "name": "Kate Leopard Dress",
+      "price": 95,
+      "quantity": 0,
+      "updatedAt": "2021-01-01T12:00:27.87+00:20",
+      "variants": 1
+    },
+    {
+      "id": "5ece2c123fad30cbbff8d060",
+      "attributes": ["Variety of styles"],
+      "category": "jewelry",
+      "currency": "$",
+      "createdAt": 345354345,
+      "image": null,
+      "inventoryType": "in_stock",
+      "isAvailable": true,
+      "isShippable": false,
+      "name": "Layering Bracelets Collection",
+      "price": 155,
+      "quantity": 48,
+      "updatedAt": "2021-01-01T12:00:27.87+00:20",
+      "variants": 5
+    },
+    {
+      "id": "5ece2c1be7996d1549d94e34",
+      "attributes": ["Polyester and Spandex"],
+      "category": "blouse",
+      "currency": "$",
+      "createdAt": "2021-01-01T12:00:27.87+00:20",
+      "image": null,
+      "inventoryType": "limited",
+      "isAvailable": false,
+      "isShippable": true,
+      "name": "Flared Sleeve Floral Blouse",
+      "price": 17.99,
+      "quantity": 5,
+      "updatedAt": "2021-01-01T12:00:27.87+00:20",
+      "variants": 1
+    }
+  ]
+}
