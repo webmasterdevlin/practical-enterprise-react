@@ -32,9 +32,16 @@ export const Routes = () => {
                   exact
                 />
                 <Route
-                  path={path + '/settings-and-privacy'}
+                  path={path + '/list-products'}
                   component={lazy(
-                    () => import('./views/dashboard/settings-and-privacy'),
+                    () => import('./views/dashboard/product/ProductListView'),
+                  )}
+                  exact
+                />
+                <Route
+                  path={path + '/create-product'}
+                  component={lazy(
+                    () => import('./views/dashboard/product/ProductCreateView'),
                   )}
                   exact
                 />
