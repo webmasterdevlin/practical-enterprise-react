@@ -6,13 +6,12 @@
  * contain code that should be seen on all pages. (e.g. navigation bar)
  */
 
-import { Container } from '@material-ui/core';
 import * as React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import { GlobalStyle } from 'styles/global-styles';
-import NavigationBar from './components/navigation-bar';
+import MainLayout from './layouts/main-layout';
 import { Routes } from './routes';
 
 export function App() {
@@ -24,10 +23,9 @@ export function App() {
       >
         <meta name="description" content="A React Boilerplate application" />
       </Helmet>
-      <NavigationBar />
-      <Container>
+      <MainLayout>
         <Routes />
-      </Container>
+      </MainLayout>
       <GlobalStyle />
     </BrowserRouter>
   );

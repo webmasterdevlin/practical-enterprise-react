@@ -1,0 +1,14 @@
+{
+  "sales": [
+    {
+      "id": "sgacus86fov",
+      "name": "This week",
+      "data": [30, 40, 25, 50, 49, 21, 70, 51]
+    },
+    {
+      "id": "saftyaf56",
+      "name": "Last week",
+      "data": [23, 12, 54, 61, 32, 56, 81, 19]
+    }
+  ]
+}

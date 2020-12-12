@@ -10,6 +10,9 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import Toolbar from '@material-ui/core/Toolbar';
 import { useRouteMatch } from 'react-router';
+import { Divider, ListSubheader } from '@material-ui/core';
+
+import { PieChart as PieChartIcon } from 'react-feather';
 
 const DashboardSidebarNavigation = () => {
   const classes = useStyles();
@@ -36,8 +39,18 @@ const DashboardSidebarNavigation = () => {
               Logo
             </Link>
           </Toolbar>
+          <Divider />
           <div className={classes.drawerContainer}>
             <List>
+              <ListSubheader>Reports</ListSubheader>
+              <Link className={classes.link} to={`${url}`}>
+                <ListItem button>
+                  <ListItemIcon>
+                    <PieChartIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={'Dashboard'} />
+                </ListItem>
+              </Link>
               <Link className={classes.link} to={`${url}/settings-and-privacy`}>
                 <ListItem button>
                   <ListItemIcon>
