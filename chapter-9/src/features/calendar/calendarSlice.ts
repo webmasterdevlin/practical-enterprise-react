@@ -15,6 +15,8 @@ interface CalendarState {
     start: number;
     end: number;
   } | null;
+  loading: boolean;
+  error: string;
 }
 
 const initialState: CalendarState = {
@@ -22,6 +24,8 @@ const initialState: CalendarState = {
   isModalOpen: false,
   selectedEventId: null,
   selectedRange: null,
+  loading: false,
+  error: '',
 };
 
 const calendarNamespace = 'calendar';
@@ -36,18 +40,112 @@ const slice = createSlice({
 
   /*Non asynchronous actions. Does not require Axios.*/
   reducers: {
+    setLoading(state: CalendarState, action: PayloadAction<boolean>) {
+      state.loading = action.payload;
+    },
+    setError(state: CalendarState, action: PayloadAction<string>) {
+      state.error = action.payload;
+    },
     getEvents(state: CalendarState, action: PayloadAction<EventType[]>) {
       state.events = action.payload;
+    },
+
+    createEvent(state: CalendarState, action: PayloadAction<EventType>) {
+      state.events.push(action.payload);
+    },
+    selectEvent(state: CalendarState, action: PayloadAction<string>) {
+      state.isModalOpen = true;
+      state.selectedEventId = action.payload;
+    },
+    updateEvent(state: CalendarState, action: PayloadAction<EventType>) {
+      const index = state.events.findIndex(e => e.id === action.payload.id);
+      state.events[index] = action.payload;
+    },
+    deleteEvent(state: CalendarState, action: PayloadAction<string>) {
+      state.events = state.events.filter(e => e.id !== action.payload);
+    },
+    selectRange(
+      state: CalendarState,
+      action: PayloadAction<{ start: number; end: number }>,
+    ) {
+      const { start, end } = action.payload;
+
+      state.isModalOpen = true;
+      state.selectedRange = {
+        start,
+        end,
+      };
+    },
+    openModal(state: CalendarState) {
+      state.isModalOpen = true;
+    },
+    closeModal(state: CalendarState) {
+      state.isModalOpen = false;
+      state.selectedEventId = null;
+      state.selectedRange = null;
     },
   },
 });
 
-/*Asynchronous actions. Actions that require Axios.*/
+/* Export these actions so components can use them */
+
+/* non-asynchronous actions. HTTP client is not needed. */
+export const selectEvent = (id?: string): AppThunk => async dispatch => {
+  dispatch(slice.actions.selectEvent(id));
+};
+
+export const selectRange = (start: Date, end: Date): AppThunk => dispatch => {
+  dispatch(
+    slice.actions.selectRange({
+      start: start.getTime(),
+      end: end.getTime(),
+    }),
+  );
+};
+
+export const openModal = (): AppThunk => dispatch => {
+  dispatch(slice.actions.openModal());
+};
+
+export const closeModal = (): AppThunk => dispatch => {
+  dispatch(slice.actions.closeModal());
+};
+
+/*Asynchronous actions. Actions that require Axios (HTTP client).*/
 
 export const getEvents = (): AppThunk => async dispatch => {
-  const response = await axios.get<EventType[]>(EndPoints.events);
+  dispatch(slice.actions.setLoading(true));
+  dispatch(slice.actions.setError(''));
+  try {
+    const response = await axios.get<EventType[]>(EndPoints.events);
+    dispatch(slice.actions.getEvents(response.data));
+  } catch (error) {
+    console.log(error.message);
+    dispatch(slice.actions.setError(error.message));
+  } finally {
+    dispatch(slice.actions.setLoading(false));
+  }
+};
 
-  dispatch(slice.actions.getEvents(response.data));
+/* Exercise: continue adding try catch here that also uses loading and error states */
+export const createEvent = (event: EventType): AppThunk => async dispatch => {
+  const { data } = await axios.post<EventType>(EndPoints.events, event);
+
+  dispatch(slice.actions.createEvent(data));
+};
+
+export const updateEvent = (update: EventType): AppThunk => async dispatch => {
+  const { data } = await axios.put<EventType>(
+    `${EndPoints.events}/${update.id}`,
+    update,
+  );
+  dispatch(slice.actions.updateEvent(data));
+};
+
+export const deleteEvent = (id: string): AppThunk => async dispatch => {
+  await axios.delete(`${EndPoints.events}/${id}`);
+
+  dispatch(slice.actions.deleteEvent(id));
 };
 
 export default slice.reducer;
