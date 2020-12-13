@@ -49,70 +49,11 @@ const slice = createSlice({
     getEvents(state: CalendarState, action: PayloadAction<EventType[]>) {
       state.events = action.payload;
     },
-
-    createEvent(state: CalendarState, action: PayloadAction<EventType>) {
-      state.events.push(action.payload);
-    },
-    selectEvent(state: CalendarState, action: PayloadAction<string>) {
-      state.isModalOpen = true;
-      state.selectedEventId = action.payload;
-    },
-    updateEvent(state: CalendarState, action: PayloadAction<EventType>) {
-      const index = state.events.findIndex(e => e.id === action.payload.id);
-      state.events[index] = action.payload;
-    },
-    deleteEvent(state: CalendarState, action: PayloadAction<string>) {
-      state.events = state.events.filter(e => e.id !== action.payload);
-    },
-    selectRange(
-      state: CalendarState,
-      action: PayloadAction<{ start: number; end: number }>,
-    ) {
-      const { start, end } = action.payload;
-
-      state.isModalOpen = true;
-      state.selectedRange = {
-        start,
-        end,
-      };
-    },
-    openModal(state: CalendarState) {
-      state.isModalOpen = true;
-    },
-    closeModal(state: CalendarState) {
-      state.isModalOpen = false;
-      state.selectedEventId = null;
-      state.selectedRange = null;
-    },
   },
 });
 
-/* Export these actions so components can use them */
-
-/* non-asynchronous actions. HTTP client is not needed. */
-export const selectEvent = (id?: string): AppThunk => async dispatch => {
-  dispatch(slice.actions.selectEvent(id));
-};
-
-export const selectRange = (start: Date, end: Date): AppThunk => dispatch => {
-  dispatch(
-    slice.actions.selectRange({
-      start: start.getTime(),
-      end: end.getTime(),
-    }),
-  );
-};
-
-export const openModal = (): AppThunk => dispatch => {
-  dispatch(slice.actions.openModal());
-};
-
-export const closeModal = (): AppThunk => dispatch => {
-  dispatch(slice.actions.closeModal());
-};
-
-/*Asynchronous actions. Actions that require Axios (HTTP client)
- or any APIs of a library or function that returns a promise.*/
+/* Asynchronous actions. Actions that require Axios (HTTP client)
+ or any APIs of a library or function that returns a promise. */
 
 export const getEvents = (): AppThunk => async dispatch => {
   dispatch(slice.actions.setLoading(true));
@@ -126,27 +67,6 @@ export const getEvents = (): AppThunk => async dispatch => {
   } finally {
     dispatch(slice.actions.setLoading(false));
   }
-};
-
-/* Exercise: continue adding try catch here that also uses loading and error states */
-export const createEvent = (event: EventType): AppThunk => async dispatch => {
-  const { data } = await axios.post<EventType>(EndPoints.events, event);
-
-  dispatch(slice.actions.createEvent(data));
-};
-
-export const updateEvent = (update: EventType): AppThunk => async dispatch => {
-  const { data } = await axios.put<EventType>(
-    `${EndPoints.events}/${update.id}`,
-    update,
-  );
-  dispatch(slice.actions.updateEvent(data));
-};
-
-export const deleteEvent = (id: string): AppThunk => async dispatch => {
-  await axios.delete(`${EndPoints.events}/${id}`);
-
-  dispatch(slice.actions.deleteEvent(id));
 };
 
 export default slice.reducer;
