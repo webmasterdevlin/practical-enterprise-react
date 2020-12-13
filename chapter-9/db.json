@@ -3,18 +3,38 @@
     {
       "id": "sgacus86fov",
       "name": "This week",
-      "data": [30, 40, 25, 50, 49, 21, 70, 51]
+      "data": [
+        30,
+        40,
+        25,
+        50,
+        49,
+        21,
+        70,
+        51
+      ]
     },
     {
       "id": "saftyaf56",
       "name": "Last week",
-      "data": [23, 12, 54, 61, 32, 56, 81, 19]
+      "data": [
+        23,
+        12,
+        54,
+        61,
+        32,
+        56,
+        81,
+        19
+      ]
     }
   ],
   "products": [
     {
       "id": "5ece2c077e39da27658aa8a9",
-      "attributes": ["Cotton"],
+      "attributes": [
+        "Cotton"
+      ],
       "category": "dress",
       "currency": "$",
       "createdAt": "2021-01-01T12:00:27.87+00:20",
@@ -30,7 +50,9 @@
     },
     {
       "id": "5ece2c0d16f70bff2cf86cd8",
-      "attributes": ["Cotton"],
+      "attributes": [
+        "Cotton"
+      ],
       "category": "dress",
       "currency": "$",
       "createdAt": "2021-01-01T12:00:27.87+00:20",
@@ -46,7 +68,9 @@
     },
     {
       "id": "5ece2c123fad30cbbff8d060",
-      "attributes": ["Variety of styles"],
+      "attributes": [
+        "Variety of styles"
+      ],
       "category": "jewelry",
       "currency": "$",
       "createdAt": 345354345,
@@ -62,7 +86,9 @@
     },
     {
       "id": "5ece2c1be7996d1549d94e34",
-      "attributes": ["Polyester and Spandex"],
+      "attributes": [
+        "Polyester and Spandex"
+      ],
       "category": "blouse",
       "currency": "$",
       "createdAt": "2021-01-01T12:00:27.87+00:20",
@@ -140,6 +166,22 @@
       "end": "2021-01-01T12:00:27.87+00:20",
       "start": "2021-01-01T12:00:27.87+00:20",
       "title": "Visit Samantha"
+    },
+    {
+      "allDay": false,
+      "description": "",
+      "end": "2020-12-13T12:56:34.596Z",
+      "start": "2020-12-13T12:26:34.597Z",
+      "title": "gggogog",
+      "id": "4HN-w8i"
+    },
+    {
+      "allDay": false,
+      "description": "",
+      "end": "2020-12-13T12:57:03.178Z",
+      "start": "2020-12-13T12:27:03.178Z",
+      "title": "test1",
+      "id": "BQl-Mdk"
     }
   ]
 }

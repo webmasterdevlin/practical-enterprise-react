@@ -111,7 +111,8 @@ export const closeModal = (): AppThunk => dispatch => {
   dispatch(slice.actions.closeModal());
 };
 
-/*Asynchronous actions. Actions that require Axios (HTTP client).*/
+/*Asynchronous actions. Actions that require Axios (HTTP client)
+ or any APIs of a library or function that returns a promise.*/
 
 export const getEvents = (): AppThunk => async dispatch => {
   dispatch(slice.actions.setLoading(true));
