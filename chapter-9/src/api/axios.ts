@@ -11,4 +11,5 @@ export default api;
 export const EndPoints = {
   sales: 'sales',
   products: 'products',
+  events: 'events',
 };

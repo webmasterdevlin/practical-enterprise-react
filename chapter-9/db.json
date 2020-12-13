@@ -76,5 +76,70 @@
       "updatedAt": "2021-01-01T12:00:27.87+00:20",
       "variants": 1
     }
+  ],
+  "events": [
+    {
+      "id": "5e8882e440f6322fa399eeb8",
+      "allDay": false,
+      "color": "green",
+      "description": "Inform about new contract",
+      "end": "2021-01-01T12:00:27.87+00:20",
+      "start": "2021-01-01T12:00:27.87+00:20",
+      "title": "Call Samantha"
+    },
+    {
+      "id": "5e8882eb5f8ec686220ff131",
+      "allDay": false,
+      "color": null,
+      "description": "Discuss about new partnership",
+      "end": "2021-01-01T12:00:27.87+00:20",
+      "start": "2021-01-01T12:00:27.87+00:20",
+      "title": "Meet with IBM"
+    },
+    {
+      "id": "5e8882f1f0c9216396e05a9b",
+      "allDay": false,
+      "color": null,
+      "description": "Prepare docs",
+      "end": "2021-01-01T12:00:27.87+00:20",
+      "start": "2021-01-01T12:00:27.87+00:20",
+      "title": "SCRUM Planning"
+    },
+    {
+      "id": "5e8882f6daf81eccfa40dee2",
+      "allDay": true,
+      "color": null,
+      "description": "Meet with team to discuss",
+      "end": "2020-12-12T12:30:00-05:00",
+      "start": "2020-11-11T12:00:27.87+00:20",
+      "title": "Begin SEM"
+    },
+    {
+      "id": "5e8882fcd525e076b3c1542c",
+      "allDay": false,
+      "color": "green",
+      "description": "Sorry, John!",
+      "end": "2021-01-01T12:00:27.87+00:20",
+      "start": "2021-01-01T12:00:27.87+00:20",
+      "title": "Fire John"
+    },
+    {
+      "id": "5e888302e62149e4b49aa609",
+      "allDay": false,
+      "color": null,
+      "description": "Discuss about the new project",
+      "end": "2021-01-01T12:00:27.87+00:20",
+      "start": "2021-01-01T12:00:27.87+00:20",
+      "title": "Call Alex"
+    },
+    {
+      "id": "5e88830672d089c53c46ece3",
+      "allDay": false,
+      "color": "green",
+      "description": "Get a new quote for the payment processor",
+      "end": "2021-01-01T12:00:27.87+00:20",
+      "start": "2021-01-01T12:00:27.87+00:20",
+      "title": "Visit Samantha"
+    }
   ]
 }

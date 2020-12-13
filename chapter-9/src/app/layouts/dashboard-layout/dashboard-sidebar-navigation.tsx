@@ -18,6 +18,7 @@ import {
   ChevronDown as ChevronDownIcon,
   List as ListIcon,
   FilePlus as FilePlusIcon,
+  Calendar as CalendarIcon,
   LogOut as LogOutIcon,
 } from 'react-feather';
 
@@ -92,6 +93,16 @@ const DashboardSidebarNavigation = () => {
                   </Link>
                 </List>
               </Collapse>
+
+              <ListSubheader>Applications</ListSubheader>
+              <Link className={classes.link} to={`${url}/calendar`}>
+                <ListItem button>
+                  <ListItemIcon>
+                    <CalendarIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={'Calendar'} />
+                </ListItem>
+              </Link>
 
               <a className={classes.link} href={'/'}>
                 <ListItem button>
