@@ -1,0 +1,189 @@
+{
+  "sales": [
+    {
+      "id": "sgacus86fov",
+      "name": "This week",
+      "data": [
+        30,
+        40,
+        25,
+        50,
+        49,
+        21,
+        70,
+        51
+      ]
+    },
+    {
+      "id": "saftyaf56",
+      "name": "Last week",
+      "data": [
+        23,
+        12,
+        54,
+        61,
+        32,
+        56,
+        81,
+        19
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "5ece2c077e39da27658aa8a9",
+      "attributes": [
+        "Cotton"
+      ],
+      "category": "dress",
+      "currency": "$",
+      "createdAt": "2021-01-01T12:00:27.87+00:20",
+      "image": null,
+      "inventoryType": "in_stock",
+      "isAvailable": true,
+      "isShippable": false,
+      "name": "Charlie Tulip Dress",
+      "price": 23.99,
+      "quantity": 85,
+      "updatedAt": "2021-01-01T12:00:27.87+00:20",
+      "variants": 2
+    },
+    {
+      "id": "5ece2c0d16f70bff2cf86cd8",
+      "attributes": [
+        "Cotton"
+      ],
+      "category": "dress",
+      "currency": "$",
+      "createdAt": "2021-01-01T12:00:27.87+00:20",
+      "image": null,
+      "inventoryType": "out_of_stock",
+      "isAvailable": false,
+      "isShippable": true,
+      "name": "Kate Leopard Dress",
+      "price": 95,
+      "quantity": 0,
+      "updatedAt": "2021-01-01T12:00:27.87+00:20",
+      "variants": 1
+    },
+    {
+      "id": "5ece2c123fad30cbbff8d060",
+      "attributes": [
+        "Variety of styles"
+      ],
+      "category": "jewelry",
+      "currency": "$",
+      "createdAt": 345354345,
+      "image": null,
+      "inventoryType": "in_stock",
+      "isAvailable": true,
+      "isShippable": false,
+      "name": "Layering Bracelets Collection",
+      "price": 155,
+      "quantity": 48,
+      "updatedAt": "2021-01-01T12:00:27.87+00:20",
+      "variants": 5
+    },
+    {
+      "id": "5ece2c1be7996d1549d94e34",
+      "attributes": [
+        "Polyester and Spandex"
+      ],
+      "category": "blouse",
+      "currency": "$",
+      "createdAt": "2021-01-01T12:00:27.87+00:20",
+      "image": null,
+      "inventoryType": "limited",
+      "isAvailable": false,
+      "isShippable": true,
+      "name": "Flared Sleeve Floral Blouse",
+      "price": 17.99,
+      "quantity": 5,
+      "updatedAt": "2021-01-01T12:00:27.87+00:20",
+      "variants": 1
+    }
+  ],
+  "events": [
+    {
+      "id": "5e8882e440f6322fa399eeb8",
+      "allDay": false,
+      "color": "green",
+      "description": "Inform about new contract",
+      "end": "2021-01-01T12:00:27.87+00:20",
+      "start": "2021-01-01T12:00:27.87+00:20",
+      "title": "Call Samantha"
+    },
+    {
+      "id": "5e8882eb5f8ec686220ff131",
+      "allDay": false,
+      "color": null,
+      "description": "Discuss about new partnership",
+      "end": "2021-01-01T12:00:27.87+00:20",
+      "start": "2021-01-01T12:00:27.87+00:20",
+      "title": "Meet with IBM"
+    },
+    {
+      "id": "5e8882f1f0c9216396e05a9b",
+      "allDay": false,
+      "color": null,
+      "description": "Prepare docs",
+      "end": "2021-01-01T12:00:27.87+00:20",
+      "start": "2021-01-01T12:00:27.87+00:20",
+      "title": "SCRUM Planning"
+    },
+    {
+      "id": "5e8882f6daf81eccfa40dee2",
+      "allDay": true,
+      "color": null,
+      "description": "Meet with team to discuss",
+      "end": "2020-12-12T12:30:00-05:00",
+      "start": "2020-11-11T12:00:27.87+00:20",
+      "title": "Begin SEM"
+    },
+    {
+      "id": "5e8882fcd525e076b3c1542c",
+      "allDay": false,
+      "color": "green",
+      "description": "Sorry, John!",
+      "end": "2021-01-01T12:00:27.87+00:20",
+      "start": "2021-01-01T12:00:27.87+00:20",
+      "title": "Fire John"
+    },
+    {
+      "id": "5e888302e62149e4b49aa609",
+      "allDay": false,
+      "color": null,
+      "description": "Discuss about the new project",
+      "end": "2021-01-01T12:00:27.87+00:20",
+      "start": "2021-01-01T12:00:27.87+00:20",
+      "title": "Call Alex"
+    },
+    {
+      "id": "5e88830672d089c53c46ece3",
+      "allDay": false,
+      "color": "green",
+      "description": "Get a new quote for the payment processor",
+      "end": "2021-01-01T12:00:27.87+00:20",
+      "start": "2021-01-01T12:00:27.87+00:20",
+      "title": "Visit Samantha"
+    }
+  ],
+  "users": [
+    {
+      "id": "aHxn5e8882e440f6322fa399eeb8D5U",
+      "email": "demo@gmail.com",
+      "password": "$2a$10$.vEI32nHFyG15ZACR7q/J.DNT/7iFC1Gfi2fFPMsG09LCPtwk0q/.",
+      "name": "John",
+      "mobile": "+34782364823",
+      "policy": true
+    },
+    {
+      "email": "demo@acme.io",
+      "password": "$2a$10$aa/zMmupG10YCt8ky9NGKuw5xAYTaaFjSg6euBpTGIoalQCj5iUv6",
+      "name": "Kyoto",
+      "mobile": "+84346577987",
+      "policy": true,
+      "id": "9b9e98j"
+    }
+  ]
+}
