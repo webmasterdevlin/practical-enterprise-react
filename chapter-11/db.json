@@ -167,5 +167,23 @@
       "start": "2021-01-01T12:00:27.87+00:20",
       "title": "Visit Samantha"
     }
+  ],
+  "users": [
+    {
+      "id": "aHxn5e8882e440f6322fa399eeb8D5U",
+      "email": "demo@gmail.com",
+      "password": "$2a$10$.vEI32nHFyG15ZACR7q/J.DNT/7iFC1Gfi2fFPMsG09LCPtwk0q/.",
+      "name": "John",
+      "mobile": "+34782364823",
+      "policy": true
+    },
+    {
+      "email": "demo@acme.io",
+      "password": "$2a$10$aa/zMmupG10YCt8ky9NGKuw5xAYTaaFjSg6euBpTGIoalQCj5iUv6",
+      "name": "Kyoto",
+      "mobile": "+84346577987",
+      "policy": true,
+      "id": "9b9e98j"
+    }
   ]
 }

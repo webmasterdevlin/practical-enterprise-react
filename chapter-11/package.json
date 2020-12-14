@@ -96,7 +96,8 @@
     "lint:css": "stylelint src/**/*.css",
     "generate": "cross-env TS_NODE_PROJECT='./internals/ts-node.tsconfig.json' plop --plopfile internals/generators/plopfile.ts",
     "prettify": "prettier --write",
-    "backend": "json-server --watch db.json --port 5000 --delay=1000"
+    "backend": "json-server --watch db.json --port 5000 --delay=1000 -m ./node_modules/json-server-auth",
+    "start:fullstack": "concurrently \"npm run backend\" \"npm run start\""
   },
   "browserslist": {
     "production": [

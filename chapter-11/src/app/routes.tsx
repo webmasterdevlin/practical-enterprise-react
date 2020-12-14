@@ -5,6 +5,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import Dashboard from './layouts/dashboard-layout';
 import HomePage from './views/pages/HomePage';
 import NotFoundPage from './views/pages/NotFoundPage';
+import ProtectedRoute from './components/protected-route';
 
 export const Routes = () => {
   return (
@@ -18,8 +19,13 @@ export const Routes = () => {
           component={lazy(() => import('./views/pages/AboutPage'))}
           exact
         />
-
         <Route
+          path={'/login'}
+          component={lazy(() => import('./views/pages/auth/LoginPage'))}
+          exact
+        />
+
+        <ProtectedRoute
           path={'/dashboard'}
           render={({ match: { path } }) => (
             <Dashboard>
