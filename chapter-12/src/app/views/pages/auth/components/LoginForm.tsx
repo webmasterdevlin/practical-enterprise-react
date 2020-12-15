@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import { Alert } from '@material-ui/lab';
+import jwt_decode from 'jwt-decode';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import {
   Box,
@@ -13,15 +15,22 @@ import {
   Card,
 } from '@material-ui/core';
 
+import { saveClaimsAction, saveTokenAction } from 'features/auth/authSlice';
 import { loginAxios } from 'services/authService';
+import { ClaimsType } from 'models/claims-type';
 
 const LoginForm = () => {
   const key = 'token';
   const history = useHistory();
+  const dispatch = useDispatch();
   const [error, setError] = useState('');
 
   const saveUserAuthDetails = (data: { accessToken: string }) => {
     localStorage.setItem(key, data.accessToken);
+    const claims: ClaimsType = jwt_decode(data.accessToken);
+    console.log('Claims::', claims);
+    dispatch(saveTokenAction(data.accessToken));
+    dispatch(saveClaimsAction(claims));
   };
 
   return (

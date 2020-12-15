@@ -103,6 +103,21 @@
       "variants": 1
     }
   ],
+  "users": [
+    {
+      "id": "7fguyfte5",
+      "email": "demo@acme.io",
+      "password": "$2a$10$Pmk32D/fgkig8pU.r1rGrOpYYJSrnqqpLO6dRdo88iYxxIsl1sstC"
+    },
+    {
+      "id": "aHxnD5U",
+      "email": "johnnydoe@yahoo.com",
+      "password": "$2a$10$.vEI32nHFyG15ZACR7q/J.DNT/7iFC1Gfi2fFPMsG09LCPtwk0q/.",
+      "name": "John",
+      "mobile": "+34782364823",
+      "policy": true
+    }
+  ],
   "events": [
     {
       "id": "5e8882e440f6322fa399eeb8",
@@ -168,22 +183,58 @@
       "title": "Visit Samantha"
     }
   ],
-  "users": [
+  "users-db": [
     {
-      "id": "aHxn5e8882e440f6322fa399eeb8D5U",
-      "email": "demo@gmail.com",
+      "id": "7fguyfte5",
+      "email": "demo@acme.io",
+      "name": "Mok Kuh",
       "password": "$2a$10$.vEI32nHFyG15ZACR7q/J.DNT/7iFC1Gfi2fFPMsG09LCPtwk0q/.",
-      "name": "John",
-      "mobile": "+34782364823",
-      "policy": true
+      "avatar": "/images/avatar_6.png",
+      "canHire": true,
+      "country": "United States",
+      "city": "NY",
+      "isPublic": true,
+      "phone": "+40 777666555",
+      "role": "admin",
+      "state": "New York",
+      "tier": "Premium",
+      "subscription": {
+        "name": "Premium",
+        "price": 29,
+        "currency": "$",
+        "proposalsLeft": 12,
+        "templatesLeft": 5,
+        "invitesLeft": 24,
+        "adsLeft": 10,
+        "hasAnalytics": true,
+        "hasEmailAlerts": true
+      }
     },
     {
-      "email": "demo@acme.io",
-      "password": "$2a$10$aa/zMmupG10YCt8ky9NGKuw5xAYTaaFjSg6euBpTGIoalQCj5iUv6",
-      "name": "Kyoto",
-      "mobile": "+84346577987",
-      "policy": true,
-      "id": "9b9e98j"
+      "id": "aHxnD5U",
+      "name": "Jay Cuminhhkk",
+      "email": "johnnydoe@yahoo.com",
+      "password": "$2a$10$.vEI32nHFyG15ZACR7q/J.DNT/7iFC1Gfi2fFPMsG09LCPtwk0q/.",
+      "avatar": "/images/avatar_6.png",
+      "canHire": true,
+      "country": "United States",
+      "city": "NY",
+      "isPublic": true,
+      "phone": "+40 777666555",
+      "role": "admin",
+      "state": "New York",
+      "tier": "Premium",
+      "subscription": {
+        "name": "Premium",
+        "price": 29,
+        "currency": "$",
+        "proposalsLeft": 12,
+        "templatesLeft": 5,
+        "invitesLeft": 24,
+        "adsLeft": 10,
+        "hasAnalytics": true,
+        "hasEmailAlerts": true
+      }
     }
   ]
 }

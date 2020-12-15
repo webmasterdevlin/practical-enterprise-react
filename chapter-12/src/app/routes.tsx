@@ -58,6 +58,13 @@ export const Routes = () => {
                   )}
                   exact
                 />
+                <Route
+                  path={path + '/account'}
+                  component={lazy(
+                    () => import('./views/dashboard/account/AccountView'),
+                  )}
+                  exact
+                />
               </Switch>
             </Dashboard>
           )}

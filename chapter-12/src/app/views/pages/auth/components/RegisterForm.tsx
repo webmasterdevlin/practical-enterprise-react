@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import { Alert } from '@material-ui/lab';
+import { useDispatch } from 'react-redux';
 import {
   Box,
   Button,
@@ -18,16 +19,24 @@ import {
   Typography,
 } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
+import { saveClaimsAction, saveTokenAction } from 'features/auth/authSlice';
+import jwt_decode from 'jwt-decode';
 import { registerAxios } from 'services/authService';
+import { ClaimsType } from 'models/claims-type';
 
 const RegisterForm = () => {
   const key = 'token';
   const history = useHistory();
+  const dispatch = useDispatch();
   const [error, setError] = useState('');
   const [isAlertVisible, setAlertVisible] = useState<boolean>(false);
 
   const saveUserAuthDetails = (data: { accessToken: string }) => {
     localStorage.setItem(key, data.accessToken);
+    const claims: ClaimsType = jwt_decode(data.accessToken);
+    console.log('Claims::', claims);
+    dispatch(saveTokenAction(data.accessToken));
+    dispatch(saveClaimsAction(claims));
   };
 
   return (
@@ -58,7 +67,8 @@ const RegisterForm = () => {
           formikHelpers.setSubmitting(false);
           history.push('dashboard');
         } catch (e) {
-          setError(e);
+          setError('Failed. Please try again.');
+          console.log(e.message);
           setAlertVisible(true);
           formikHelpers.setStatus({ success: false });
           formikHelpers.setSubmitting(false);
