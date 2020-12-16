@@ -5,20 +5,21 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
-import { colors } from '@material-ui/core';
+import { colors, useMediaQuery } from '@material-ui/core';
 import { RootState } from 'store/reducers';
 import HeaderProfile from 'app/components/header-profile';
 
 export default function NavigationBar() {
   const classes = useStyles();
   const { claims } = useSelector((state: RootState) => state.auth);
+  const mobileDevice = useMediaQuery('(max-width:650px)');
 
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
           <Link className={`${classes.link} ${classes.title}`} to={'/'}>
-            LOGO
+            {!mobileDevice && 'LOGO'}
           </Link>
 
           <Button className={classes.menuButton} color="inherit">

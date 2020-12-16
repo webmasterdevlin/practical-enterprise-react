@@ -32,6 +32,7 @@ import {
 
 import { RootState } from 'store/reducers';
 import { getProfileAction } from 'features/profile/profileAsyncActions';
+import clsx from 'clsx';
 
 const DashboardSidebarNavigation = () => {
   const classes = useStyles();
@@ -40,7 +41,7 @@ const DashboardSidebarNavigation = () => {
   const { claims } = useSelector((state: RootState) => state.auth);
   const [open, setOpen] = useState(false);
   const { url } = useRouteMatch();
-  const isMobile = useMediaQuery('(max-width:600px)');
+  const mobileDevice = useMediaQuery('(max-width:650px)');
 
   useEffect(() => {
     dispatch(getProfileAction(claims.sub));
@@ -58,14 +59,17 @@ const DashboardSidebarNavigation = () => {
     <>
       <div className={classes.root}>
         <Drawer
-          className={classes.drawer}
+          className={clsx(classes.drawer, mobileDevice && classes.drawerClose)}
           variant="permanent"
           classes={{
-            paper: classes.drawerPaper,
+            paper: clsx(
+              classes.drawerPaper,
+              mobileDevice && classes.drawerClose,
+            ),
           }}
           anchor="left"
         >
-          {profile.name && (
+          {profile.name && !mobileDevice && (
             <Box p={2}>
               <Box display="flex" justifyContent="center">
                 <Avatar
@@ -83,81 +87,167 @@ const DashboardSidebarNavigation = () => {
             </Box>
           )}
           <Divider />
-          <div className={classes.drawerContainer}>
-            <List>
-              <ListSubheader>Reports</ListSubheader>
-              <Link className={classes.link} to={`${url}`}>
-                <ListItem button>
+          {mobileDevice ? (
+            <div className={classes.drawerContainer}>
+              <List>
+                {mobileDevice ? (
+                  <Divider />
+                ) : (
+                  <ListSubheader>Management</ListSubheader>
+                )}
+                <Link className={classes.link} to={`${url}`}>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <PieChartIcon />
+                    </ListItemIcon>
+                  </ListItem>
+                </Link>
+                {mobileDevice ? (
+                  <Divider />
+                ) : (
+                  <ListSubheader>Management</ListSubheader>
+                )}
+                <ListItem button onClick={handleClick}>
                   <ListItemIcon>
-                    <PieChartIcon />
+                    <ShoppingCartIcon />
                   </ListItemIcon>
-                  <ListItemText primary={'Dashboard'} />
+                  {open ? <ChevronUpIcon /> : <ChevronDownIcon />}
                 </ListItem>
-              </Link>
-              <ListSubheader>Management</ListSubheader>
-              <ListItem button onClick={handleClick}>
-                <ListItemIcon>
-                  <ShoppingCartIcon />
-                </ListItemIcon>
-                <ListItemText primary="Products" />
-                {open ? <ChevronUpIcon /> : <ChevronDownIcon />}
-              </ListItem>
-              <Collapse in={open} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding>
-                  <Link className={classes.link} to={`${url}/list-products`}>
-                    <ListItem button className={classes.nested}>
-                      <ListItemIcon>
-                        <ListIcon />
-                      </ListItemIcon>
-                      <ListItemText primary="List Products" />
-                    </ListItem>
-                  </Link>
-                  <Link className={classes.link} to={`${url}/create-product`}>
-                    <ListItem button className={classes.nested}>
-                      <ListItemIcon>
-                        <FilePlusIcon />
-                      </ListItemIcon>
-                      <ListItemText primary="Create Product" />
-                    </ListItem>
-                  </Link>
-                </List>
-              </Collapse>
-              <ListSubheader>Applications</ListSubheader>
-              <Link className={classes.link} to={`${url}/calendar`}>
-                <ListItem button>
+                <Collapse in={open} timeout="auto" unmountOnExit>
+                  <List component="div" disablePadding>
+                    <Link className={classes.link} to={`${url}/list-products`}>
+                      <ListItem button className={classes.nested}>
+                        <ListItemIcon>
+                          <ListIcon />
+                        </ListItemIcon>
+                      </ListItem>
+                    </Link>
+                    <Link className={classes.link} to={`${url}/create-product`}>
+                      <ListItem button className={classes.nested}>
+                        <ListItemIcon>
+                          <FilePlusIcon />
+                        </ListItemIcon>
+                      </ListItem>
+                    </Link>
+                  </List>
+                </Collapse>
+                {mobileDevice ? (
+                  <Divider />
+                ) : (
+                  <ListSubheader>Applications</ListSubheader>
+                )}
+                <Link className={classes.link} to={`${url}/calendar`}>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <CalendarIcon />
+                    </ListItemIcon>
+                  </ListItem>
+                </Link>
+                {mobileDevice ? (
+                  <Divider />
+                ) : (
+                  <ListSubheader>Pages</ListSubheader>
+                )}
+                <Link className={classes.link} to={`${url}/account`}>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <UserIcon />
+                    </ListItemIcon>
+                  </ListItem>
+                </Link>
+                <Link className={classes.link} to={`/pricing`}>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <DollarSignIcon />
+                    </ListItemIcon>
+                  </ListItem>
+                </Link>
+                <a className={classes.link} href={'/'}>
+                  <ListItem button onClick={handleLogout}>
+                    <ListItemIcon>
+                      <LogOutIcon />
+                    </ListItemIcon>
+                  </ListItem>
+                </a>
+              </List>
+            </div>
+          ) : (
+            <div className={classes.drawerContainer}>
+              <List>
+                <ListSubheader>Reports</ListSubheader>
+                <Link className={classes.link} to={`${url}`}>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <PieChartIcon />
+                    </ListItemIcon>
+                    <ListItemText primary={'Dashboard'} />
+                  </ListItem>
+                </Link>
+                <ListSubheader>Management</ListSubheader>
+                <ListItem button onClick={handleClick}>
                   <ListItemIcon>
-                    <CalendarIcon />
+                    <ShoppingCartIcon />
                   </ListItemIcon>
-                  <ListItemText primary={'Calendar'} />
+                  <ListItemText primary="Products" />
+                  {open ? <ChevronUpIcon /> : <ChevronDownIcon />}
                 </ListItem>
-              </Link>
-              <ListSubheader>Pages</ListSubheader>
-              <Link className={classes.link} to={`${url}/account`}>
-                <ListItem button>
-                  <ListItemIcon>
-                    <UserIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={'Account'} />
-                </ListItem>
-              </Link>
-              <Link className={classes.link} to={`/pricing`}>
-                <ListItem button>
-                  <ListItemIcon>
-                    <DollarSignIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={'Pricing'} />
-                </ListItem>
-              </Link>
-              <a className={classes.link} href={'/'}>
-                <ListItem button onClick={handleLogout}>
-                  <ListItemIcon>
-                    <LogOutIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={'logout'} />
-                </ListItem>
-              </a>
-            </List>
-          </div>
+                <Collapse in={open} timeout="auto" unmountOnExit>
+                  <List component="div" disablePadding>
+                    <Link className={classes.link} to={`${url}/list-products`}>
+                      <ListItem button className={classes.nested}>
+                        <ListItemIcon>
+                          <ListIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="List Products" />
+                      </ListItem>
+                    </Link>
+                    <Link className={classes.link} to={`${url}/create-product`}>
+                      <ListItem button className={classes.nested}>
+                        <ListItemIcon>
+                          <FilePlusIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Create Product" />
+                      </ListItem>
+                    </Link>
+                  </List>
+                </Collapse>
+                <ListSubheader>Applications</ListSubheader>
+                <Link className={classes.link} to={`${url}/calendar`}>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <CalendarIcon />
+                    </ListItemIcon>
+                    <ListItemText primary={'Calendar'} />
+                  </ListItem>
+                </Link>
+                <ListSubheader>Pages</ListSubheader>
+                <Link className={classes.link} to={`${url}/account`}>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <UserIcon />
+                    </ListItemIcon>
+                    <ListItemText primary={'Account'} />
+                  </ListItem>
+                </Link>
+                <Link className={classes.link} to={`/pricing`}>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <DollarSignIcon />
+                    </ListItemIcon>
+                    <ListItemText primary={'Pricing'} />
+                  </ListItem>
+                </Link>
+                <a className={classes.link} href={'/'}>
+                  <ListItem button onClick={handleLogout}>
+                    <ListItemIcon>
+                      <LogOutIcon />
+                    </ListItemIcon>
+                    <ListItemText primary={'logout'} />
+                  </ListItem>
+                </a>
+              </List>
+            </div>
+          )}
         </Drawer>
       </div>
     </>
@@ -183,11 +273,11 @@ const useStyles = makeStyles(theme =>
       width: drawerWidth,
       flexShrink: 0,
     },
-    drawerPaper: {
-      width: drawerWidth,
-    },
     drawerContainer: {
       overflow: 'auto',
+    },
+    drawerPaper: {
+      width: drawerWidth,
     },
     link: { textDecoration: 'none', color: 'inherit' },
     logoWithLink: {
@@ -203,5 +293,18 @@ const useStyles = makeStyles(theme =>
       display: 'flex',
     },
     toolbar: theme.mixins.toolbar,
+
+    // mobile style
+    drawerClose: {
+      transition: theme.transitions.create('width', {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen,
+      }),
+      overflowX: 'hidden',
+      width: theme.spacing(7) + 1,
+      [theme.breakpoints.up('sm')]: {
+        width: theme.spacing(9) + 1,
+      },
+    },
   }),
 );
