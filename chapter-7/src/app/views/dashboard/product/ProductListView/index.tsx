@@ -18,10 +18,10 @@ const ProductListView = () => {
   const classes = useStyles();
 
   const [products, setProducts] = useState<ProductType[]>([]);
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    fetchProducts().then();
+    fetchProducts();
   }, []);
 
   const fetchProducts = async () => {

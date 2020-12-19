@@ -21,7 +21,7 @@ const ProductListView = () => {
   const [open, setOpen] = React.useState(false);
 
   useEffect(() => {
-    fetchProducts().then();
+    fetchProducts();
   }, []);
 
   const fetchProducts = async () => {

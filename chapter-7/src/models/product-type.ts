@@ -6,7 +6,7 @@ export type ProductType = {
   category: string;
   createdAt: string | number;
   currency: string;
-  image: string | null;
+  image?: string;
   inventoryType: InventoryType;
   isAvailable: boolean;
   isShippable: boolean;
@@ -19,7 +19,7 @@ export type ProductType = {
   images: string[];
   includesTaxes: boolean;
   isTaxable: boolean;
-  productCode: '';
-  productSku: '';
-  salePrice: '';
+  productCode: string;
+  productSku: string;
+  salePrice: string;
 };
