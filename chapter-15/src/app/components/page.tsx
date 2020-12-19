@@ -1,13 +1,12 @@
-import React, { forwardRef } from 'react';
-import type { HTMLProps, ReactNode } from 'react';
+import React, { forwardRef, HTMLProps, ReactNode } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-type PageProps = {
+type Props = {
   children?: ReactNode;
   title?: string;
 } & HTMLProps<HTMLDivElement>;
 
-const Page = forwardRef<HTMLDivElement, PageProps>(
+const Page = forwardRef<HTMLDivElement, Props>(
   ({ children, title = '', ...rest }, ref) => {
     return (
       <div ref={ref as any} {...rest}>
