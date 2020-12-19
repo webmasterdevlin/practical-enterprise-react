@@ -1,11 +1,13 @@
-import { getEvents } from 'features/calendar/calendarSlice';
 import React, { useEffect } from 'react';
+import { getEvents } from 'features/calendar/calendarSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from 'store/reducers';
 
 const CalendarView = () => {
   const dispatch = useDispatch();
-  const { events, loading, error } = useSelector((state: RootState) => state.calendar);
+  const { events, loading, error } = useSelector(
+    (state: RootState) => state.calendar,
+  );
 
   useEffect(() => {
     dispatch(getEvents());
