@@ -3,38 +3,18 @@
     {
       "id": "sgacus86fov",
       "name": "This week",
-      "data": [
-        30,
-        40,
-        25,
-        50,
-        49,
-        21,
-        70,
-        51
-      ]
+      "data": [30, 40, 25, 50, 49, 21, 70, 51]
     },
     {
       "id": "saftyaf56",
       "name": "Last week",
-      "data": [
-        23,
-        12,
-        54,
-        61,
-        32,
-        56,
-        81,
-        19
-      ]
+      "data": [23, 12, 54, 61, 32, 56, 81, 19]
     }
   ],
   "products": [
     {
       "id": "5ece2c077e39da27658aa8a9",
-      "attributes": [
-        "Cotton"
-      ],
+      "attributes": ["Cotton"],
       "category": "dress",
       "currency": "$",
       "createdAt": "2021-01-01T12:00:27.87+00:20",
@@ -50,9 +30,7 @@
     },
     {
       "id": "5ece2c0d16f70bff2cf86cd8",
-      "attributes": [
-        "Cotton"
-      ],
+      "attributes": ["Cotton"],
       "category": "dress",
       "currency": "$",
       "createdAt": "2021-01-01T12:00:27.87+00:20",
@@ -68,9 +46,7 @@
     },
     {
       "id": "5ece2c123fad30cbbff8d060",
-      "attributes": [
-        "Variety of styles"
-      ],
+      "attributes": ["Variety of styles"],
       "category": "jewelry",
       "currency": "$",
       "createdAt": 345354345,
@@ -86,9 +62,7 @@
     },
     {
       "id": "5ece2c1be7996d1549d94e34",
-      "attributes": [
-        "Polyester and Spandex"
-      ],
+      "attributes": ["Polyester and Spandex"],
       "category": "blouse",
       "currency": "$",
       "createdAt": "2021-01-01T12:00:27.87+00:20",
@@ -188,32 +162,6 @@
       "id": "7fguyfte5",
       "email": "demo@acme.io",
       "name": "Mok Kuh",
-      "password": "$2a$10$.vEI32nHFyG15ZACR7q/J.DNT/7iFC1Gfi2fFPMsG09LCPtwk0q/.",
-      "avatar": "/images/avatar_6.png",
-      "canHire": true,
-      "country": "United States",
-      "city": "NY",
-      "isPublic": true,
-      "phone": "+40 777666555",
-      "role": "admin",
-      "state": "New York",
-      "tier": "Premium",
-      "subscription": {
-        "name": "Premium",
-        "price": 29,
-        "currency": "$",
-        "proposalsLeft": 12,
-        "templatesLeft": 5,
-        "invitesLeft": 24,
-        "adsLeft": 10,
-        "hasAnalytics": true,
-        "hasEmailAlerts": true
-      }
-    },
-    {
-      "id": "aHxnD5U",
-      "name": "Jay Cuminhhkk",
-      "email": "johnnydoe@yahoo.com",
       "password": "$2a$10$.vEI32nHFyG15ZACR7q/J.DNT/7iFC1Gfi2fFPMsG09LCPtwk0q/.",
       "avatar": "/images/avatar_6.png",
       "canHire": true,
