@@ -1,6 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import moment from 'moment';
 import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import interactionPlugin from '@fullcalendar/interaction';
+import listPlugin from '@fullcalendar/list';
+import timelinePlugin from '@fullcalendar/timeline';
+
 import {
   Container,
   Dialog,
@@ -12,12 +18,9 @@ import Page from 'app/components/page';
 import { EventType, ViewType } from 'models/calendar-type';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from 'store/reducers';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import interactionPlugin from '@fullcalendar/interaction';
-import listPlugin from '@fullcalendar/list';
-import timelinePlugin from '@fullcalendar/timeline';
+
 import Header from './Header';
+import AddEditEventForm from './AddEditEventForm';
 import Toolbar from './Toolbar';
 import {
   closeModal,
@@ -27,8 +30,6 @@ import {
   selectRange,
   updateEvent,
 } from 'features/calendar/calendarSlice';
-
-import AddEditEventForm from './AddEditEventForm';
 
 const CalendarView = () => {
   const classes = useStyles();
@@ -44,7 +45,7 @@ const CalendarView = () => {
     mobileDevice ? 'listWeek' : 'dayGridMonth',
   );
 
-  /* useRef is used to access DOM elements and 
+  /* useRef is used to access DOM elements and
   to persist state or values in successive or next renders */
   const calendarRef = useRef<FullCalendar | null>(null);
 
@@ -165,23 +166,23 @@ const CalendarView = () => {
         <Paper className={classes.calendar}>
           <FullCalendar
             allDayMaintainDuration
-            initialDate={date}
-            initialView={view}
             droppable
             editable
+            selectable
+            weekends
+            dayMaxEventRows
+            eventResizableFromStart
+            headerToolbar={false}
+            select={handleRangeSelect}
             eventClick={handleEventSelect}
             eventDrop={handleEventDrop}
-            dayMaxEventRows={true}
-            eventResizableFromStart
             eventResize={handleEventResize}
+            initialDate={date}
+            initialView={view}
             events={events}
-            headerToolbar={false}
             height={800}
             ref={calendarRef}
             rerenderDelay={10}
-            select={handleRangeSelect}
-            selectable
-            weekends
             plugins={[
               dayGridPlugin,
               timeGridPlugin,

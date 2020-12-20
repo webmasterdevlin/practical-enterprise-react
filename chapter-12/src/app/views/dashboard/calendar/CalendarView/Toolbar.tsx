@@ -1,5 +1,4 @@
-import React from 'react';
-import type { ElementType, FC, ReactNode } from 'react';
+import React, { ElementType, ReactNode } from 'react';
 import clsx from 'clsx';
 import moment from 'moment';
 import {
