@@ -29,7 +29,7 @@ const RegisterForm = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const [error, setError] = useState('');
-  const [isAlertVisible, setAlertVisible] = useState<boolean>(false);
+  const [isAlertVisible, setAlertVisible] = useState(false);
 
   const saveUserAuthDetails = (data: { accessToken: string }) => {
     localStorage.setItem(key, data.accessToken);

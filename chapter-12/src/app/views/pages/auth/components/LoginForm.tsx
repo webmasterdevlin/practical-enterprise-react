@@ -51,7 +51,6 @@ const LoginForm = () => {
           const { data } = await loginAxios(values);
           saveUserAuthDetails(data);
           formikHelpers.resetForm();
-          formikHelpers.resetForm();
           formikHelpers.setStatus({ success: true });
           formikHelpers.setSubmitting(false);
           history.push('dashboard');

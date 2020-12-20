@@ -32,6 +32,10 @@ const DashboardSidebarNavigation = () => {
     setOpen(!open);
   };
 
+  const handleLogout = () => {
+    localStorage.clear();
+  };
+
   return (
     <>
       <div className={classes.root}>
@@ -104,7 +108,7 @@ const DashboardSidebarNavigation = () => {
               </Link>
 
               <a className={classes.link} href={'/'}>
-                <ListItem button>
+                <ListItem button onClick={handleLogout}>
                   <ListItemIcon>
                     <LogOutIcon />
                   </ListItemIcon>
