@@ -25,6 +25,12 @@ export const Routes = () => {
           exact
         />
 
+        <Route
+          path={'/pricing'}
+          component={lazy(() => import('./views/pages/pricing/PricingPage'))}
+          exact
+        />
+
         <ProtectedRoute
           path={'/dashboard'}
           render={({ match: { path } }) => (

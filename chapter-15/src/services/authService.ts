@@ -1,4 +1,4 @@
-import axios, { EndPoints } from 'api/axios';
+import api, { EndPoints } from 'api/axios';
 
 export type UserModel = {
   email: string;
@@ -6,7 +6,7 @@ export type UserModel = {
 };
 
 export async function loginAxios(userModel: UserModel) {
-  return await axios.post<{ accessToken: string }>(EndPoints.login, userModel);
+  return await api.post<{ accessToken: string }>(EndPoints.login, userModel);
 }
 
 export type RegisterModel = {
@@ -18,7 +18,7 @@ export type RegisterModel = {
 };
 
 export async function registerAxios(registerModel: RegisterModel) {
-  return await axios.post<{ accessToken: string }>(
+  return await api.post<{ accessToken: string }>(
     EndPoints.register,
     registerModel,
   );
@@ -33,7 +33,7 @@ export type ChangePasswordModel = {
 export async function changePasswordAxios(
   changePasswordModel: ChangePasswordModel,
 ) {
-  return await axios.put<void>(
+  return await api.put<void>(
     `${EndPoints.users}/${changePasswordModel.id}`,
     changePasswordModel,
   );

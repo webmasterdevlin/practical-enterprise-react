@@ -17,7 +17,7 @@ import Page from 'app/components/page';
 
 const AccountView = () => {
   const classes = useStyles();
-  const [currentTab, setCurrentTab] = useState<string>('general');
+  const [currentTab, setCurrentTab] = useState('general');
 
   const handleTabsChange = (event: ChangeEvent<{}>, value: string): void => {
     setCurrentTab(value);

@@ -15,7 +15,6 @@ import {
   Divider,
   ListSubheader,
   Typography,
-  useMediaQuery,
 } from '@material-ui/core';
 import {
   PieChart as PieChartIcon,
@@ -40,7 +39,6 @@ const DashboardSidebarNavigation = () => {
   const { claims } = useSelector((state: RootState) => state.auth);
   const [open, setOpen] = useState(false);
   const { url } = useRouteMatch();
-  const isMobile = useMediaQuery('(max-width:600px)');
 
   useEffect(() => {
     dispatch(getProfileAction(claims.sub));

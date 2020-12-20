@@ -123,9 +123,7 @@ const GeneralSettings = ({ className, user, ...rest }: Props) => {
                     options={countries}
                     value={values?.country}
                     getOptionLabel={option => option.toString()}
-                    renderOption={option => (
-                      <React.Fragment>{option.text}</React.Fragment>
-                    )}
+                    renderOption={option => <>{option.text}</>}
                     onChange={(e: any) => {
                       setFieldValue('country', e.target.innerText);
                     }}
