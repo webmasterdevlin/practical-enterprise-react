@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction, Draft } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { UserType } from 'models/user-type';
 
 import { profileNamespace, ProfileStateType } from './profileActionTypes';
@@ -31,28 +31,28 @@ export const profileSlice = createSlice({
   extraReducers: builder => {
     builder.addCase(
       getProfileAction.fulfilled,
-      (state: Draft<ProfileStateType>, action: PayloadAction<UserType>) => {
+      (state, action: PayloadAction<UserType>) => {
         state.profile = action.payload;
       },
     );
 
     builder.addCase(
       putProfileAction.pending,
-      (state: Draft<ProfileStateType>, action: PayloadAction) => {
+      (state, action: PayloadAction) => {
         state.loading = true;
         state.error = '';
       },
     );
     builder.addCase(
       putProfileAction.fulfilled,
-      (state: Draft<ProfileStateType>, action: PayloadAction<UserType>) => {
+      (state, action: PayloadAction<UserType>) => {
         state.loading = false;
         state.profile = action.payload;
       },
     );
     builder.addCase(
       putProfileAction.rejected,
-      (state: Draft<ProfileStateType>, action: PayloadAction<any>) => {
+      (state, action: PayloadAction<any>) => {
         state.loading = false;
         state.error = 'Something wrong happened';
         console.log(action?.payload);

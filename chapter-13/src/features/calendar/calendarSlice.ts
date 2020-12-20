@@ -43,34 +43,31 @@ const slice = createSlice({
 
   /*Non asynchronous actions. Does not require Axios.*/
   reducers: {
-    setLoading(state: CalendarState, action: PayloadAction<boolean>) {
+    setLoading(state, action: PayloadAction<boolean>) {
       state.loading = action.payload;
     },
-    setError(state: CalendarState, action: PayloadAction<string>) {
+    setError(state, action: PayloadAction<string>) {
       state.error = action.payload;
     },
-    getEvents(state: CalendarState, action: PayloadAction<EventType[]>) {
+    getEvents(state, action: PayloadAction<EventType[]>) {
       state.events = action.payload;
     },
 
-    createEvent(state: CalendarState, action: PayloadAction<EventType>) {
+    createEvent(state, action: PayloadAction<EventType>) {
       state.events.push(action.payload);
     },
-    selectEvent(state: CalendarState, action: PayloadAction<string>) {
+    selectEvent(state, action: PayloadAction<string>) {
       state.isModalOpen = true;
       state.selectedEventId = action.payload;
     },
-    updateEvent(state: CalendarState, action: PayloadAction<EventType>) {
+    updateEvent(state, action: PayloadAction<EventType>) {
       const index = state.events.findIndex(e => e.id === action.payload.id);
       state.events[index] = action.payload;
     },
-    deleteEvent(state: CalendarState, action: PayloadAction<string>) {
+    deleteEvent(state, action: PayloadAction<string>) {
       state.events = state.events.filter(e => e.id !== action.payload);
     },
-    selectRange(
-      state: CalendarState,
-      action: PayloadAction<{ start: number; end: number }>,
-    ) {
+    selectRange(state, action: PayloadAction<{ start: number; end: number }>) {
       const { start, end } = action.payload;
 
       state.isModalOpen = true;
@@ -79,10 +76,10 @@ const slice = createSlice({
         end,
       };
     },
-    openModal(state: CalendarState) {
+    openModal(state) {
       state.isModalOpen = true;
     },
-    closeModal(state: CalendarState) {
+    closeModal(state) {
       state.isModalOpen = false;
       state.selectedEventId = null;
       state.selectedRange = null;

@@ -44,13 +44,13 @@ const slice = createSlice({
 
   /*Non asynchronous actions. Does not require Axios.*/
   reducers: {
-    setLoading(state: CalendarState, action: PayloadAction<boolean>) {
+    setLoading(state, action: PayloadAction<boolean>) {
       state.loading = action.payload;
     },
-    setError(state: CalendarState, action: PayloadAction<string>) {
+    setError(state, action: PayloadAction<string>) {
       state.error = action.payload;
     },
-    getEvents(state: CalendarState, action: PayloadAction<EventType[]>) {
+    getEvents(state, action: PayloadAction<EventType[]>) {
       state.events = action.payload;
     },
   },
