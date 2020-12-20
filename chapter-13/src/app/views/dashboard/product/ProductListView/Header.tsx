@@ -47,7 +47,7 @@ const Header = ({ className, ...rest }: Props) => {
             Dashboard
           </Link>
 
-          <Box>
+          <Box mb={3}>
             <Typography variant="body1" color="inherit">
               List Products
             </Typography>

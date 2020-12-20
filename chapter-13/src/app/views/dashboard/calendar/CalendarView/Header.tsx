@@ -43,7 +43,7 @@ const Header = ({ className, onAddClick, ...rest }: Props) => {
           >
             Dashboard
           </Link>
-          <Box>
+          <Box mb={3}>
             <Typography variant="body1" color="inherit">
               Calendar
             </Typography>

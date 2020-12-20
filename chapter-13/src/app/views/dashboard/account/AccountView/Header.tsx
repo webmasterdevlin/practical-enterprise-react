@@ -26,7 +26,7 @@ const Header = ({ className, ...rest }: Props) => {
         <Link color="inherit" to="/app" component={RouterLink}>
           Dashboard
         </Link>
-        <Box>
+        <Box mb={3}>
           <Typography variant="body1" color="inherit">
             Account
           </Typography>
