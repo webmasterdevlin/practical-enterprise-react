@@ -1,5 +1,9 @@
-import { createSlice, ThunkAction, Action } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
+import {
+  createSlice,
+  ThunkAction,
+  Action,
+  PayloadAction,
+} from '@reduxjs/toolkit';
 
 import { RootState } from 'store/reducers';
 import { EventType } from 'models/calendar-type';
@@ -10,11 +14,11 @@ export type AppThunk = ThunkAction<void, RootState, null, Action<string>>;
 interface CalendarState {
   events: EventType[];
   isModalOpen: boolean;
-  selectedEventId: string | null;
-  selectedRange: {
+  selectedEventId?: string;
+  selectedRange?: {
     start: number;
     end: number;
-  } | null;
+  };
   loading: boolean;
   error: string;
 }

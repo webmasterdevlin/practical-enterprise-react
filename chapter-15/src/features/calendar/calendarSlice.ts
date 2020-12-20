@@ -10,11 +10,11 @@ export type AppThunk = ThunkAction<void, RootState, null, Action<string>>;
 interface CalendarState {
   events: EventType[];
   isModalOpen: boolean;
-  selectedEventId: string | null;
-  selectedRange: {
+  selectedEventId?: string;
+  selectedRange?: {
     start: number;
     end: number;
-  } | null;
+  };
   loading: boolean;
   error: string;
 }

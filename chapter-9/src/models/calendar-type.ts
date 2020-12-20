@@ -1,11 +1,11 @@
 export type CalendarType = {
   events?: EventType[] | any;
   isModalOpen: boolean;
-  selectedEventId: string | null;
-  selectedRange: {
+  selectedEventId?: string;
+  selectedRange?: {
     start: number;
     end: number;
-  } | null;
+  };
 };
 
 export type EventType = {
