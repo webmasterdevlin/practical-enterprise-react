@@ -81,13 +81,8 @@
     {
       "id": "7fguyfte5",
       "email": "demo@acme.io",
-      "password": "$2a$10$Pmk32D/fgkig8pU.r1rGrOpYYJSrnqqpLO6dRdo88iYxxIsl1sstC"
-    },
-    {
-      "id": "aHxnD5U",
-      "email": "johnnydoe@yahoo.com",
-      "password": "$2a$10$.vEI32nHFyG15ZACR7q/J.DNT/7iFC1Gfi2fFPMsG09LCPtwk0q/.",
-      "name": "John",
+      "password": "$2a$10$Pmk32D/fgkig8pU.r1rGrOpYYJSrnqqpLO6dRdo88iYxxIsl1sstC",
+      "name": "Mok Kuh",
       "mobile": "+34782364823",
       "policy": true
     }
