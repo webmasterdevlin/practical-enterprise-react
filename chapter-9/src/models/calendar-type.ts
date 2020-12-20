@@ -1,13 +1,3 @@
-export type CalendarType = {
-  events?: EventType[] | any;
-  isModalOpen: boolean;
-  selectedEventId?: string;
-  selectedRange?: {
-    start: number;
-    end: number;
-  };
-};
-
 export type EventType = {
   id: string;
   allDay: boolean;
