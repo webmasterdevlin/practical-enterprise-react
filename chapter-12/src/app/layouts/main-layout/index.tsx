@@ -1,5 +1,4 @@
-import React from 'react';
-import type { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { makeStyles } from '@material-ui/core';
 
 import NavigationBar from './navigation-bar';
