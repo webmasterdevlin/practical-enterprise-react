@@ -48,9 +48,9 @@ type Props = {
 const Results = ({ className, products, ...rest }: Props) => {
   const classes = useStyles();
   const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
-  const [page, setPage] = useState<number>(0);
-  const [limit, setLimit] = useState<number>(10);
-  const [query, setQuery] = useState<string>('');
+  const [page, setPage] = useState(0);
+  const [limit, setLimit] = useState(10);
+  const [query, setQuery] = useState('');
   const [sort, setSort] = useState<string>(sortOptions[0].value);
   const [filters, setFilters] = useState<TableResultsHelpers | any>({
     category: null,
