@@ -2,12 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
-import { colors, useMediaQuery } from '@material-ui/core';
 import { RootState } from 'store/reducers';
 import HeaderProfile from 'app/components/header-profile';
+
+import {
+  AppBar,
+  Toolbar,
+  Button,
+  useMediaQuery,
+  colors,
+} from '@material-ui/core';
 
 export default function NavigationBar() {
   const classes = useStyles();

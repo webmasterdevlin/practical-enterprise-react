@@ -90,11 +90,6 @@ const DashboardSidebarNavigation = () => {
           {mobileDevice ? (
             <div className={classes.drawerContainer}>
               <List>
-                {mobileDevice ? (
-                  <Divider />
-                ) : (
-                  <ListSubheader>Management</ListSubheader>
-                )}
                 <Link className={classes.link} to={`${url}`}>
                   <ListItem button>
                     <ListItemIcon>
@@ -102,17 +97,14 @@ const DashboardSidebarNavigation = () => {
                     </ListItemIcon>
                   </ListItem>
                 </Link>
-                {mobileDevice ? (
-                  <Divider />
-                ) : (
-                  <ListSubheader>Management</ListSubheader>
-                )}
+                <Divider />
                 <ListItem button onClick={handleClick}>
                   <ListItemIcon>
                     <ShoppingCartIcon />
                   </ListItemIcon>
                   {open ? <ChevronUpIcon /> : <ChevronDownIcon />}
                 </ListItem>
+                <Divider />
                 <Collapse in={open} timeout="auto" unmountOnExit>
                   <List component="div" disablePadding>
                     <Link className={classes.link} to={`${url}/list-products`}>
@@ -131,11 +123,7 @@ const DashboardSidebarNavigation = () => {
                     </Link>
                   </List>
                 </Collapse>
-                {mobileDevice ? (
-                  <Divider />
-                ) : (
-                  <ListSubheader>Applications</ListSubheader>
-                )}
+                <Divider />
                 <Link className={classes.link} to={`${url}/calendar`}>
                   <ListItem button>
                     <ListItemIcon>
@@ -143,11 +131,7 @@ const DashboardSidebarNavigation = () => {
                     </ListItemIcon>
                   </ListItem>
                 </Link>
-                {mobileDevice ? (
-                  <Divider />
-                ) : (
-                  <ListSubheader>Pages</ListSubheader>
-                )}
+                <Divider />
                 <Link className={classes.link} to={`${url}/account`}>
                   <ListItem button>
                     <ListItemIcon>
@@ -155,6 +139,7 @@ const DashboardSidebarNavigation = () => {
                     </ListItemIcon>
                   </ListItem>
                 </Link>
+                <Divider />
                 <Link className={classes.link} to={`/pricing`}>
                   <ListItem button>
                     <ListItemIcon>
@@ -162,6 +147,7 @@ const DashboardSidebarNavigation = () => {
                     </ListItemIcon>
                   </ListItem>
                 </Link>
+                <Divider />
                 <a className={classes.link} href={'/'}>
                   <ListItem button onClick={handleLogout}>
                     <ListItemIcon>
@@ -170,6 +156,7 @@ const DashboardSidebarNavigation = () => {
                   </ListItem>
                 </a>
               </List>
+              <Divider />
             </div>
           ) : (
             <div className={classes.drawerContainer}>
@@ -183,6 +170,7 @@ const DashboardSidebarNavigation = () => {
                     <ListItemText primary={'Dashboard'} />
                   </ListItem>
                 </Link>
+
                 <ListSubheader>Management</ListSubheader>
                 <ListItem button onClick={handleClick}>
                   <ListItemIcon>
@@ -211,6 +199,7 @@ const DashboardSidebarNavigation = () => {
                     </Link>
                   </List>
                 </Collapse>
+
                 <ListSubheader>Applications</ListSubheader>
                 <Link className={classes.link} to={`${url}/calendar`}>
                   <ListItem button>
@@ -220,6 +209,7 @@ const DashboardSidebarNavigation = () => {
                     <ListItemText primary={'Calendar'} />
                   </ListItem>
                 </Link>
+
                 <ListSubheader>Pages</ListSubheader>
                 <Link className={classes.link} to={`${url}/account`}>
                   <ListItem button>
@@ -237,6 +227,7 @@ const DashboardSidebarNavigation = () => {
                     <ListItemText primary={'Pricing'} />
                   </ListItem>
                 </Link>
+
                 <a className={classes.link} href={'/'}>
                   <ListItem button onClick={handleLogout}>
                     <ListItemIcon>

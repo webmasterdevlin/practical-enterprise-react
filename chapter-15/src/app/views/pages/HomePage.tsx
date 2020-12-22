@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Box, Container, Typography, useMediaQuery } from '@material-ui/core';
 import Page from 'app/components/page';
 
