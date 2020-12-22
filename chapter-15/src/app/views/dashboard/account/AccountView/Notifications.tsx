@@ -33,7 +33,7 @@ const Notifications = ({ className, ...rest }: Props) => {
                 System
               </Typography>
               <Typography gutterBottom variant="body2" color="textSecondary">
-                You will recieve emails in your business email address
+                You will receive emails in your business email address
               </Typography>
               <div>
                 <FormControlLabel
@@ -74,7 +74,7 @@ const Notifications = ({ className, ...rest }: Props) => {
                 Chat App
               </Typography>
               <Typography gutterBottom variant="body2" color="textSecondary">
-                You will recieve emails in your business email address
+                You will receive emails in your business email address
               </Typography>
               <div>
                 <FormControlLabel

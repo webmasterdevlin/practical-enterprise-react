@@ -79,7 +79,7 @@ const DashboardSidebarNavigation = () => {
                 />
               </Box>
               <Box mt={2} textAlign="center">
-                <Typography>{`${profile.name}`}</Typography>
+                <Typography>{profile.name}</Typography>
                 <Typography variant="body2" color="textSecondary">
                   Your tier: {profile.tier}
                 </Typography>
