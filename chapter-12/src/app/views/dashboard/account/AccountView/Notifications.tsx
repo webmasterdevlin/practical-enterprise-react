@@ -1,5 +1,4 @@
 import React from 'react';
-import type { FormEvent } from 'react';
 import clsx from 'clsx';
 import {
   Box,
@@ -22,15 +21,8 @@ type Props = {
 const Notifications = ({ className, ...rest }: Props) => {
   const classes = useStyles();
 
-  const handleSubmit = async (
-    event: FormEvent<HTMLFormElement>,
-  ): Promise<void> => {
-    event.preventDefault();
-    // NOTE: Make API request
-  };
-
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <Card className={clsx(classes.root, className)} {...rest}>
         <CardHeader title="Notifications" />
         <Divider />
